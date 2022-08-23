@@ -136,7 +136,7 @@ $(function(){
                 localStorage.setItem('token',res.token);
                 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM2NjEsInVzZXJuYW1lIjoiaGVuZyIsInBhc3N3b3JkIjoiIiwibmlja25hbWUiOiIiLCJlbWFpbCI6IiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNjYxMjQ1ODIyLCJleHAiOjE2NjEyODE4MjJ9.2mF47qxgJa025PJJgLbE1l_1dYiu7oPb_fflrF9P8aI
                 // 跳转到页面主页
-                location.href = '/index.html';
+                // location.href = '/index.html';
             }
         })
     })

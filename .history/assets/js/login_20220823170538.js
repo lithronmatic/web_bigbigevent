@@ -106,7 +106,7 @@ $(function(){
     // 监听注册表单的提交事件
     $('#form_reg').on('submit',function(e){
         e.preventDefault();
-        $.post('/api/reguser',{
+        $.post('http://www.liulongbin.top:3007/api/reguser',{
             username:$('#form_reg input[name=username]').val(),
             password:$('#form_reg input[name=password]').val()
         },function(res){
@@ -124,7 +124,7 @@ $(function(){
         e.preventDefault();
         $.ajax({
             type:'POST',
-            url:'/api/login',
+            url:'http://www.liulongbin.top:3007/api/login',
             // 快速获取表单中的数据
             data:$(this).serialize(),
             success:function(res){
@@ -132,11 +132,6 @@ $(function(){
                     return layer.msg('登录失败!');
                 }
                 layer.msg('登录成功!');
-                // 将登陆成功得到的token字符串，保存在localStorage
-                localStorage.setItem('token',res.token);
-                // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjM2NjEsInVzZXJuYW1lIjoiaGVuZyIsInBhc3N3b3JkIjoiIiwibmlja25hbWUiOiIiLCJlbWFpbCI6IiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNjYxMjQ1ODIyLCJleHAiOjE2NjEyODE4MjJ9.2mF47qxgJa025PJJgLbE1l_1dYiu7oPb_fflrF9P8aI
-                // 跳转到页面主页
-                location.href = '/index.html';
             }
         })
     })

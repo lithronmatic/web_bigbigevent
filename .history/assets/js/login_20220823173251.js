@@ -106,7 +106,7 @@ $(function(){
     // 监听注册表单的提交事件
     $('#form_reg').on('submit',function(e){
         e.preventDefault();
-        $.post('/api/reguser',{
+        $.post('http://www.liulongbin.top:3007/api/reguser',{
             username:$('#form_reg input[name=username]').val(),
             password:$('#form_reg input[name=password]').val()
         },function(res){
@@ -124,7 +124,7 @@ $(function(){
         e.preventDefault();
         $.ajax({
             type:'POST',
-            url:'/api/login',
+            url:'http://www.liulongbin.top:3007/api/login',
             // 快速获取表单中的数据
             data:$(this).serialize(),
             success:function(res){

@@ -86,8 +86,5 @@ html,body{
 .layui-icon{
     position:absolute;
     top:10px;
-    left:10px;  
-}
-.layui-input{
-    padding-left:32px;
+    left:10px;
 }
