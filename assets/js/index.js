@@ -102,7 +102,7 @@ function renderAvatar(user) {
     // 判断user_pic是否存在 存在渲染头像 不存在用文本头像 
     if (user.user_pic) {
         // 渲染用户头像
-        $(".layui-nav-img").attr('src', user.user_pic)
+        $(".layui-nav-img").attr('src', user.user_pic).show()
         $(".text-avatar").hide()
     } else {
         $(".layui-nav-img").hide()
