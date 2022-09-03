@@ -22,5 +22,4 @@ $.ajaxPrefilter(function(options){
             location.href = "./login.html"
         }
     } //如果每次访问有权限的接口都要写一遍很麻烦 可以封装到baseAPI里去
-
 })

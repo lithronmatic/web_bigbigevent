@@ -44,70 +44,48 @@
 //     }
 // }
 
-$(function () {
+$(function(){
     getUserInfo()
 
-    var layer = layui.layer
     //点击退出功能 
-    $("#btnLogout").on('click', function () {
-        // 提示用户是否确认退出
-        layer.confirm('确定退出登录', {
-            icon: 3,
-            title: '提示'
-        }, function (index) {
-            //do something
-            // 1.清空本地存储的token
-            localStorage.removeItem('token')
-            // 2.重新跳转到登录页面
-            location.href="./login.html"
-            layer.close(index);
-        }); 
+    $("#btnLogout").on('click',function(){
+        alert(1)
     })
 })
 
 // 获取用户基本信息
-function getUserInfo() {
+function getUserInfo(){
     $.ajax({
-        type: 'GET',
-        url: '/my/userinfo',
-        // headersn 请求头配置对象
+        type:'GET',
+        url:'/my/userinfo',
+        // headers 请求头配置对象
         // headers:{
         //     Authorization:localStorage.getItem('token') || ""
         // },
-        success: function (res) {
-            if (res.status != 0) {
+        success:function(res){
+            if(res.status!=0){
                 return layui.layer.msg('获取用户信息失败!')
             }
             // 调用renderAvatar渲染用户的头像
             renderAvatar(res.data)
-        },
-        // 无论成功还是失败，最终都会调用complete函数
-        // complete:function(res){
-        //     // console.log(res);
-        //     // 在complete回调函数中，可以使用res.responseJSON拿到服务器响应回来的数据
-        //     if(res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！"){
-        //         // 1.强制清空token
-        //         localStorage.removeItem('token')
-        //         // 2.强制跳转到login.html
-        //         location.href = "./login.html"
-        //     }
-        // } //如果每次访问有权限的接口都要写一遍很麻烦 可以封装到baseAPI里去
+        }
     })
 }
 
 // 渲染用户的头像
-function renderAvatar(user) {
+function renderAvatar(user){
     var name = user.nickname || user.username;
-    $("#welcome").html("欢迎&nbsp;&nbsp" + name)
+    $("#welcome").html("欢迎&nbsp;&nbsp"+name)
     // 判断user_pic是否存在 存在渲染头像 不存在用文本头像 
-    if (user.user_pic) {
+    if(user.user_pic){
         // 渲染用户头像
-        $(".layui-nav-img").attr('src', user.user_pic)
+        $(".layui-nav-img").attr('src',user.user_pic)
         $(".text-avatar").hide()
-    } else {
+    }else{
         $(".layui-nav-img").hide()
         // 渲染文本头像
         var first = name[0].toUpperCase()
         $(".text-avatar").html(first).show()
     }
 }
+

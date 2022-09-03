@@ -85,21 +85,3 @@ iframe{
 .layui-side-scroll .userinfo{
     border-bottom:1px solid #282b33;
 }
-
-.text-avatar{
-    display: inline-block;
-    width:40px;
-    height: 40px;
-    background-color: #009688;
-    vertical-align: middle;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    color:#fff;
-    margin-right:5px
-}
-.layui-nav-img{
-    width:40px;
-    height:40px;
-}

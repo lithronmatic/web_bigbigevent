@@ -56,12 +56,9 @@ $(function () {
             title: '提示'
         }, function (index) {
             //do something
-            // 1.清空本地存储的token
-            localStorage.removeItem('token')
-            // 2.重新跳转到登录页面
-            location.href="./login.html"
+            console.log(1);
             layer.close(index);
-        }); 
+        });
     })
 })
 
@@ -70,7 +67,7 @@ function getUserInfo() {
     $.ajax({
         type: 'GET',
         url: '/my/userinfo',
-        // headersn 请求头配置对象
+        // headers 请求头配置对象
         // headers:{
         //     Authorization:localStorage.getItem('token') || ""
         // },
@@ -80,18 +77,7 @@ function getUserInfo() {
             }
             // 调用renderAvatar渲染用户的头像
             renderAvatar(res.data)
-        },
-        // 无论成功还是失败，最终都会调用complete函数
-        // complete:function(res){
-        //     // console.log(res);
-        //     // 在complete回调函数中，可以使用res.responseJSON拿到服务器响应回来的数据
-        //     if(res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！"){
-        //         // 1.强制清空token
-        //         localStorage.removeItem('token')
-        //         // 2.强制跳转到login.html
-        //         location.href = "./login.html"
-        //     }
-        // } //如果每次访问有权限的接口都要写一遍很麻烦 可以封装到baseAPI里去
+        }
     })
 }
 
